@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+targetNamespace="http://in28minutes.com/courses" 
+xmlns:tns="http://in28minutes.com/courses" elementFormDefault="qualified">
+	<!-- We're saying - the request can contain an element called "GetCourseDetailsRequest" -->
+	<element name = "GetCourseDetailsRequest">
+		<!-- When an element can contain another element, you have to create a "complex type" -->
+		<!-- We can define the structure here - what should be inside the complex type? An element called id -->
+		<complexType>
+			<sequence>
+				<element name="id" type="integer"></element>
+			</sequence>	
+		</complexType>
+	</element>
+</schema>
+
+<!-- <GetCourseDetailsRequest xmlns="http://in28minutes.com/courses">  -->
+<!-- <!-- 	We want the id to only be numbers. We set the requirements in an XSD - which will define the structure of XML. --> -->
+<!-- 	<id>123</id>  -->
+<!-- </GetCourseDetailsRequest> -->

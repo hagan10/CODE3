@@ -2,7 +2,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- This is a node  -->
 <!-- You set the namespace so that the request won't clash with another request  -->
-<GetCourseDetailsRequest xmlns="http://in28minutes.com/courses"> 
-<!-- 	We want the id to only be numbers. We set the requirements in an XSD - which will define the structure of XML. -->
-	<id>123</id> 
+<!-- So after you have your XML and your XSD, you have to tie them together. 
+You need to define an XML schema definition. 
+The location is the name of the XSD. You can do this by doing Control-Space
+<!-- Then we need to define the xsi, with xmlns-->
+<GetCourseDetailsRequest xmlns="http://in28minutes.com/courses" 
+xsi:schemaLocation="http://in28minutes.com/courses course-details.xsd"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+<!-- 	We want the id to only be numbers. 
+We set the requirements in an XSD - which will define the structure of XML.
+So if you try to put in letters here, it will tell you that it's not valid 
+Or if you try to add another ID here, you can't - because the XSD says it can only be 1 ID and it has to be a number-->
+	<id>$$$</id> 
 </GetCourseDetailsRequest>
+
+
