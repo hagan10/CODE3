@@ -1,6 +1,11 @@
 <!-- This is what a response will look like  -->
 <?xml version="1.0" encoding="UTF-8"?>
-<GetCourseDetailsResponse xmlns="http://in28minutes.com/courses"> 
+
+<!-- the name sapce is line 1, need to add the schema namespace (line 2 of this), and then the schema location (line 3) -->
+<GetCourseDetailsResponse xmlns="http://in28minutes.com/courses"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsixsi:schemaLocation="http://in28minutes.com/courses course-details.xsd"
+> 
 	<CourseDetails>
 		<id>123</id>
 		<name>Spring in 28minutes</name>
