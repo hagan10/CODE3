@@ -1,0 +1,8 @@
+<!-- This is what a request will look like  -->
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This is a node  -->
+<!-- You set the namespace so that the request won't clash with another request  -->
+<GetCourseDetailsRequest xmlns="http://in28minutes.com/courses"> 
+<!-- 	We want the id to only be numbers. We set the requirements in an XSD - which will define the structure of XML. -->
+	<id>123</id> 
+</GetCourseDetailsRequest>
