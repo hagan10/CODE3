@@ -83,6 +83,10 @@
 
 	<build>
 		<plugins>
+			<!-- JAXB2 Maven Plugin -->
+			<!-- XSD Source Folder -->
+			<!-- Java Class Source Folder -->
+			<!-- clear folder -> false -->
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
@@ -92,24 +96,26 @@
 				<artifactId>jaxb2-maven-plugin</artifactId>
 				<version>1.6</version>
 				<executions>
-					<execution>
+				<!-- 	<execution>
 						<id>xjc</id>
 						<goals>
 							<goal>xjc</goal>
 						</goals>
-					</execution>
+					</execution> -->
 				</executions>
 				<configuration>
 					<schemaDirectory>${project.basedir}/src/main/resources</schemaDirectory>
 					<outputDirectory>${project.basedir}/src/main/java</outputDirectory>
 					<clearOutputDir>false</clearOutputDir>
+					
+					<packageName>com.x.y.model</packageName>
+   					<wsdl>true</wsdl>
+    				<xmlschema>false</xmlschema>
+    				<schemaFiles>service.wsdl</schemaFiles>
+					
+					
 				</configuration>
 			</plugin>
-			<!-- JAXB2 Maven Plugin -->
-			<!-- XSD Source Folder -->
-			<!-- Java Class Source Folder -->
-			<!-- clear folder -> false -->
-
 		</plugins>
 	</build>
 
