@@ -14,7 +14,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.0.0.RELEASE</version>
+		<version>2.1.4.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 
@@ -33,42 +33,7 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web-services</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>wsdl4j</groupId>
-			<artifactId>wsdl4j</artifactId>
-		</dependency>
 
-		<dependency>
-			<groupId>org.springframework.ws</groupId>
-			<artifactId>spring-ws-security</artifactId>
-			<exclusions>
-				<exclusion>
-					<groupId>org.springframework.security</groupId>
-					<artifactId>spring-security-core</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		<dependency>
-			<groupId>com.sun.xml.wss</groupId>
-			<artifactId>xws-security</artifactId>
-			<version>3.0</version>
-			<exclusions>
-				<exclusion>
-					<groupId>javax.xml.crypto</groupId>
-					<artifactId>xmldsig</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		<dependency>
-			<groupId>javax.activation</groupId>
-			<artifactId>activation</artifactId>
-			<version>1.1.1</version>
-		</dependency>
-		
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
@@ -83,21 +48,21 @@
 
 	<build>
 		<plugins>
-			<!-- JAXB2 Maven Plugin -->
-			<!-- XSD Source Folder -->
-			<!-- Java Class Source Folder -->
-			<!-- clear folder -> false -->
-		<plugin>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>jaxb2-maven-plugin</artifactId>
 				<version>1.6</version>
 				<executions>
-					<execution>
-						<id>xjc</id>
-						<goals>
-							<goal>xjc</goal>
-						</goals>
-					</execution>
+<!-- 					<execution> -->
+<!-- 						<id>xjc</id> -->
+<!-- 						<goals> -->
+<!-- 							<goal>xjc</goal> -->
+<!-- 						</goals> -->
+<!-- 					</execution> -->
 				</executions>
 				<configuration>
 					<schemaDirectory>${project.basedir}/src/main/resources</schemaDirectory>
@@ -105,6 +70,11 @@
 					<clearOutputDir>false</clearOutputDir>
 				</configuration>
 			</plugin>
+			<!-- JAXB2 Maven Plugin -->
+			<!-- XSD Source Folder -->
+			<!-- Java Class Source Folder -->
+			<!-- clear folder -> false -->
+
 		</plugins>
 	</build>
 
